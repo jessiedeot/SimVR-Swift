@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Alamofire
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -17,12 +18,47 @@ class ViewController: UIViewController {
     
     @IBAction func loginTapped(sender: AnyObject) {
         
-        self.performSegueWithIdentifier("logged_in", sender: sender)
+        let usernameText = usernameField.text!
+        let passwordText = passwordField.text!
         
+        if ( usernameText == "" || passwordText == "" ) {
+            
+            let alert = UIAlertController(title: "Login Failed!", message:"Please enter a valid Username and Password", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "OK", style: .Default) { _ in}
+            alert.addAction(action)
+            self.presentViewController(alert, animated: true){}
+            
+            
+        } else {
+            
+            Alamofire.request(.GET, "http://ec2-52-39-148-197.us-west-2.compute.amazonaws.com:3000/auth/login/?email=\(usernameText)&password=\(passwordText)")
+                .responseJSON {  response in
+                    switch response.result {
+                    case .Success(let JSON):
+                        print("Success: \(JSON)")
+                        self.performSegueWithIdentifier("logged_in", sender: sender)
+                        
+                        
+                    case .Failure(let error):
+                        print("Request failed with error: \(error)")
+                        let alert = UIAlertController(title: "Login Failed!", message:"Please enter a valid Username and Password", preferredStyle: .Alert)
+                        let action = UIAlertAction(title: "OK", style: .Default) { _ in}
+                        alert.addAction(action)
+                        self.presentViewController(alert, animated: true){}
+                        
+                    }
+            }
+            
+        }
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.usernameField.delegate = self;
+        self.passwordField.delegate = self;
+
         
         let myColor : UIColor = UIColor( red: 14/255, green: 61/255, blue:153/255, alpha: 1.0 )
         
@@ -42,8 +78,15 @@ class ViewController: UIViewController {
         loginBtn.layer.borderWidth = 2.0 
         loginBtn.layer.cornerRadius = 8.0
         loginBtn.layer.backgroundColor = myColor.CGColor
+        
+        
     
         
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 
     override func didReceiveMemoryWarning() {

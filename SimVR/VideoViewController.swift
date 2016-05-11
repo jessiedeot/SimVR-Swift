@@ -16,17 +16,21 @@ class VideoViewController: UIViewController, GCSVideoViewDelegate {
     var videoView: GCSVideoView!
     var isPaused: Bool! = nil
     
-    @IBOutlet weak var logoutBtn: UIButton!
     
+    @IBAction func logoutBarButton(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("logged_out", sender: sender)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let myColor : UIColor = UIColor( red: 14/255, green: 61/255, blue:153/255, alpha: 1.0 )
         
-        logoutBtn.layer.borderColor = myColor.CGColor
-        logoutBtn.layer.borderWidth = 2.0
-        logoutBtn.layer.cornerRadius = 8.0
-        logoutBtn.layer.backgroundColor = myColor.CGColor
+        //logoutBtn.layer.borderColor = myColor.CGColor
+        //logoutBtn.layer.borderWidth = 2.0
+        //logoutBtn.layer.cornerRadius = 8.0
+        //logoutBtn.layer.backgroundColor = myColor.CGColor
         
         self.kMargin = 50
         self.kVideoViewHeight = 250
@@ -54,7 +58,7 @@ class VideoViewController: UIViewController, GCSVideoViewDelegate {
         
         
         //videoView.loadFromUrl(NSURL.init(fileURLWithPath:videoPath))
-        videoView.loadFromUrl(NSURL(string: "https://www.youtube.com/watch?v=Mpvmzbgyzvc")!)
+        videoView.loadFromUrl(NSURL(string: "ec2-52-38-104-45.us-west-2.compute.amazonaws.com:3000/movie.mp4")!)
         
         self.view!.addSubview(videoView)
     }
@@ -84,11 +88,6 @@ class VideoViewController: UIViewController, GCSVideoViewDelegate {
     }
     
     
-    @IBAction func logoutTapped(sender: AnyObject) {
-        
-        self.performSegueWithIdentifier("logged_out", sender: sender)
-        
-    }
     
     
     

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A9A86591D503EE495FF003A3 /* Pods_SimVR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE737C38AD9CDABADAB2AC3F /* Pods_SimVR.framework */; };
+		CC23E4281CE2E83E00D01ED4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC23E4271CE2E83E00D01ED4 /* RegisterViewController.swift */; };
+		CC23E42A1CE2EB0700D01ED4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CC23E4291CE2EB0700D01ED4 /* icon.png */; };
 		CCD242C51CDA579A003620A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD242C41CDA579A003620A6 /* AppDelegate.swift */; };
 		CCD242C71CDA579A003620A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD242C61CDA579A003620A6 /* ViewController.swift */; };
 		CCD242CA1CDA579A003620A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCD242C81CDA579A003620A6 /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		765B69475F48DD8265101507 /* Pods-SimVR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimVR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimVR/Pods-SimVR.debug.xcconfig"; sourceTree = "<group>"; };
 		82E8039E3AB341CCC922FE4E /* Pods-SimVR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimVR.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimVR/Pods-SimVR.release.xcconfig"; sourceTree = "<group>"; };
+		CC23E4271CE2E83E00D01ED4 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		CC23E4291CE2EB0700D01ED4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		CCD242C11CDA579A003620A6 /* SimVR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimVR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCD242C41CDA579A003620A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCD242C61CDA579A003620A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 				CCD242FD1CDEC533003620A6 /* nurse_cap.png */,
 				CCD242C41CDA579A003620A6 /* AppDelegate.swift */,
 				CCD242C61CDA579A003620A6 /* ViewController.swift */,
+				CC23E4291CE2EB0700D01ED4 /* icon.png */,
+				CC23E4271CE2E83E00D01ED4 /* RegisterViewController.swift */,
 				CCD242F91CDDA853003620A6 /* VideoViewController.swift */,
 				CCD242FB1CDDBB35003620A6 /* SocketIOManager.swift */,
 				CCD242C81CDA579A003620A6 /* Main.storyboard */,
@@ -283,6 +289,7 @@
 			files = (
 				CCD243081CDFC280003620A6 /* test.mp4 in Resources */,
 				CCD242FE1CDEC533003620A6 /* nurse_cap.png in Resources */,
+				CC23E42A1CE2EB0700D01ED4 /* icon.png in Resources */,
 				CCD242CF1CDA579B003620A6 /* LaunchScreen.storyboard in Resources */,
 				CCD242CC1CDA579B003620A6 /* Assets.xcassets in Resources */,
 				CCD242CA1CDA579A003620A6 /* Main.storyboard in Resources */,
@@ -359,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCD242FC1CDDBB35003620A6 /* SocketIOManager.swift in Sources */,
+				CC23E4281CE2E83E00D01ED4 /* RegisterViewController.swift in Sources */,
 				CCD242C71CDA579A003620A6 /* ViewController.swift in Sources */,
 				CCD242C51CDA579A003620A6 /* AppDelegate.swift in Sources */,
 				CCD242FA1CDDA853003620A6 /* VideoViewController.swift in Sources */,
